@@ -3,15 +3,6 @@ import { Language, translations } from "./translations.ts";
 import { createStore } from "solid-js/store";
 import { isValidHttpUrl } from "./utils.ts";
 
-function priceFromState(state: {
-  hasNif: boolean;
-  hasPassportPhoto: boolean;
-  hasWorkContract: boolean;
-  manualPrice: string;
-}) {
-  if (state.manualPrice) return state.manualPrice;
-}
-
 export function App() {
   const [lang, setLang] = createSignal<Language>("en");
   const [isManualPrice, setIsManualPrice] = createSignal(false);
